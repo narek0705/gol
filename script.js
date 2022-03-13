@@ -5,7 +5,6 @@ var grassEaterArr = [];
 var eaterArr = [];
 var hunterArr = [];
 var guardianArr = [];
-var waterMachineArr = [];
 
 var side = 25;
 
@@ -31,8 +30,6 @@ function draw() {
                 fill("#5c2500");
             } else if (matrix[y][x] == 5) {
                 fill("black");
-            } else if (matrix[y][x] == 6) {
-                fill("blue");
             } else {
                 fill("#acacac");
             }
@@ -65,10 +62,6 @@ function draw() {
             guardianArr[i].stop();
         }
     }
-
-    for (i = 0; i < waterMachineArr.length; i++) {
-        waterMachineArr[i].flood();
-    }
 }
 
 function createObjects() {
@@ -89,10 +82,7 @@ function createObjects() {
             } else if (matrix[y][x] == 5) {
                 var gu = new Guardian(x, y, 5);
                 guardianArr.push(gu);
-            } else if (matrix[y][x] == 6) {
-                var wM = new WaterMachine(x, y, 6);
-                waterMachineArr.push(wM);
-            }
+            } 
         }
     }
 }
